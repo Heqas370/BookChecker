@@ -37,6 +37,7 @@ struct BookDetailsView: View {
                 VStack(spacing: 15){
                     Text(book.author)
                         .font(.title.bold())
+                    Text("Book added: \(book.dateConverted)")
                     Text(book.review)
                 }
                 .padding(.top, 25)
@@ -77,7 +78,7 @@ struct BookDetailsView: View {
     do{
         let config = ModelConfiguration(isStoredInMemoryOnly: true)
         let container = try ModelContainer(for: Book.self, configurations: config)
-        let example  = Book(title: "Lord Of Rings", author: "J.R.R. Tolkien", type: "Fantasy", review: "Nice book to read. Enjoyed it.", rating: 4)
+        let example  = Book(title: "Lord Of Rings", author: "J.R.R. Tolkien", type: "Fantasy", review: "Nice book to read. Enjoyed it.", rating: 4, date: Date())
         
         return BookDetailsView(book: example)
             .modelContainer(container)

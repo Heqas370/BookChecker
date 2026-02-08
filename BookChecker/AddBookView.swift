@@ -44,7 +44,7 @@ struct AddBookView: View {
             .font(.title3.bold())
             
             Button("Save"){
-                let newBook = Book(title: title, author: author, type: type, review: review, rating: rating)
+                let newBook = Book(title: title, author: author, type: type, review: review, rating: rating, date: Date())
                 modelContext.insert(newBook)
                 dismiss()
             }

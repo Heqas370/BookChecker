@@ -37,6 +37,7 @@ struct ContentView: View {
                         }
                         .padding(.horizontal, 10)
                     }
+                    .listRowBackground((book.rating == 1) ? Color.red : Color.white)
                 }
                 .onDelete(perform: removeBook)
             }
